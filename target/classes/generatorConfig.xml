@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<!-- 设置sql驱动路径 -->
+	<classPathEntry location="E:\JavaWebCode\mysql-connector-java-5.1.39.jar" />
+	<!-- 此处指定生成针对MyBatis3的DAO -->
+	<context id="context1" targetRuntime="MyBatis3">
+		<!-- 注释 -->
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" /><!-- 是否取消注释 -->
+			<property name="suppressDate" value="false" /> <!-- 是否生成注释代时间戳 -->
+		</commentGenerator>
+		<!-- jdbc连接信息 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/chytest"
+			userId="root" password="root" />
+		<!-- 生成model对象 -->
+		<javaModelGenerator targetPackage="com.chy.yihe.model" targetProject="ChyTestMySQL" />
+		<!-- 生成mapper对象 -->
+		<sqlMapGenerator targetPackage="com.chy.yihe.mapper" targetProject="ChyTestMySQL" />
+		<!-- 生成DAO的类文件以及配置文件 -->
+		<javaClientGenerator targetPackage="com.chy.yihe.dao" targetProject="ChyTestMySQL" type="XMLMAPPER" />
+
+		<table schema="" tableName="t_school" enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false">
+		</table>
+	</context>
+</generatorConfiguration>

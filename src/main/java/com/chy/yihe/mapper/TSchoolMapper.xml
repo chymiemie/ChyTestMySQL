@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chy.yihe.dao.TSchoolMapper">
+  <resultMap id="BaseResultMap" type="com.chy.yihe.model.TSchool">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="school" jdbcType="VARCHAR" property="school" />
+    <result column="grade" jdbcType="VARCHAR" property="grade" />
+  </resultMap>
+  <insert id="insert" parameterType="com.chy.yihe.model.TSchool">
+    insert into t_school (id, school, grade
+      )
+    values (#{id,jdbcType=INTEGER}, #{school,jdbcType=VARCHAR}, #{grade,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.chy.yihe.model.TSchool">
+    insert into t_school
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="school != null">
+        school,
+      </if>
+      <if test="grade != null">
+        grade,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="school != null">
+        #{school,jdbcType=VARCHAR},
+      </if>
+      <if test="grade != null">
+        #{grade,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
