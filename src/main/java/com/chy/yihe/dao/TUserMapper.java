@@ -1,6 +1,9 @@
 package com.chy.yihe.dao;
 
+import java.util.List;
+
 import com.chy.yihe.model.TUser;
+import com.chy.yihe.model.vo.UserAndTelNum;
 
 public interface TUserMapper {
     int deleteByPrimaryKey(Integer id);
@@ -14,4 +17,6 @@ public interface TUserMapper {
     int updateByPrimaryKeySelective(TUser record);
 
     int updateByPrimaryKey(TUser record);
+    
+    List<UserAndTelNum> selectAllUserAndTelNum();
 }

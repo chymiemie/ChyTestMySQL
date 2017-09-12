@@ -21,7 +21,7 @@
 		<!-- 生成DAO的类文件以及配置文件 -->
 		<javaClientGenerator targetPackage="com.chy.yihe.dao" targetProject="ChyTestMySQL" type="XMLMAPPER" />
 
-		<table schema="" tableName="t_school" enableCountByExample="false"
+		<table schema="" tableName="studentInfo" enableCountByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false"
 			enableSelectByExample="false" selectByExampleQueryId="false">
 		</table>
